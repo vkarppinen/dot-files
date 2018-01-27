@@ -1,0 +1,14 @@
+# Custom settings
+
+export EDITOR="/usr/bin/vi"
+
+
+# Custom prompt
+if [ -f "$HOME/dotfiles/.v-bash-prompt" ]; then
+  . "$HOME/dotfiles/.v-bash-prompt"
+fi
+
+# Custom aliases
+if [ -f "$HOME/dotfiles/.bash_aliases" ]; then
+    . "$HOME/dotfiles/.bash_aliases"
+fi
