@@ -88,11 +88,11 @@ function generate_git_bar {
 		&& flags="${flags}${VCS_FLAG_STASHED}"
 	[[ ${raw_status} =~ "You have unmerged paths" ]] \
 		&& flags="${flags}${VCS_FLAG_UNCLEAN}"
-	[[	${raw_status} =~ "#	modified: " || ${raw_status} =~ "#	renamed: " ]] \
+	[[	${raw_status} =~ "modified: " || ${raw_status} =~ "renamed: " ]] \
 		&& flags="${flags}${VCS_FLAG_MODIFIED}"
-	[[ ${raw_status} =~ "#	new file: " ]] \
+	[[ ${raw_status} =~ "new file: " ]] \
 		&& flags="${flags}${VCS_FLAG_ADDED}"
-	[[ ${raw_status} =~ "#	deleted: " ]] \
+	[[ ${raw_status} =~ "deleted: " ]] \
 		&& flags="${flags}${VCS_FLAG_DELETED}"
 	[[ ${raw_status}} =~ "Untracked files" ]] \
 		&& flags="${flags}${VCS_FLAG_UNTRACKED}"
