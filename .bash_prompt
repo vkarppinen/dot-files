@@ -27,8 +27,6 @@
     BG_LIGHT_GRAY="\e[47m"
     BG_LIGHT_BLUE="\e[104m"
 
-1
-
 # Presets
 
 COLOR_USER=${COLOR_USER:-$GRAY}
@@ -96,11 +94,11 @@ function generate_git_bar {
 		&& flags="${flags}${VCS_FLAG_STASHED}"
 	[[ ${raw_status} =~ "You have unmerged paths" ]] \
 		&& flags="${flags}${VCS_FLAG_UNCLEAN}"
-	[[	${raw_status} =~ "#	modified: " || ${raw_status} =~ "#	renamed: " ]] \
+	[[	${raw_status} =~ "Changes not staged for commit" || ${raw_status} =~ "#	renamed: " ]] \
 		&& flags="${flags}${VCS_FLAG_MODIFIED}"
-	[[ ${raw_status} =~ "#	new file: " ]] \
+	[[ ${raw_status} =~ "new file: " ]] \
 		&& flags="${flags}${VCS_FLAG_ADDED}"
-	[[ ${raw_status} =~ "#	deleted: " ]] \
+	[[ ${raw_status} =~ "deleted: " ]] \
 		&& flags="${flags}${VCS_FLAG_DELETED}"
 	[[ ${raw_status}} =~ "Untracked files" ]] \
 		&& flags="${flags}${VCS_FLAG_UNTRACKED}"
@@ -194,13 +192,13 @@ function prompt_func() {
 		# Use red # as prompt char when root
 		local prompt="${RED}#${COLOR_RESET} "
 	else
-		local prompt="${WHITE} >> ${COLOR_RESET}"
+		local prompt="${WHITE}>> ${COLOR_RESET}"
 	fi
 
 	# vcs
 	local vcsbar=""
 	if is_git_repository; then
-		vcsbar="$(generate_git_bar)${RESET}"
+		vcsbar="$(generate_git_bar)${RESET} "
 	fi
 
 	# system
