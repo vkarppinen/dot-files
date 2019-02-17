@@ -1,11 +1,6 @@
-all: touch links
-
-touch:
-	touch $$HOME/.bashrc
-	touch $$HOME/.bash_prompt
-	touch $$HOME/.tmux.conf
+all: links
 
 links:
-	ln -sf $$HOME/.bashrc .bashrc
-	ln -sf $$HOME/.bash_prompt .bash_prompt
-	ln -sf $$HOME/.tmux.conf .tmux.conf
+	ln -sf $$(pwd)/.bashrc $$HOME/.bashrc
+	ln -sf $$(pwd)/.bash_prompt $$HOME/.bash_prompt
+	ln -sf $$(pwd)/.tmux.conf $$HOME/.tmux.conf
