@@ -1,0 +1,38 @@
+[user]
+	email = karppinenvaltteri@gmail.com
+	name = vkarppinen
+
+[color "branch"]
+	current = green bold
+	local = blue bold
+	remote = magenta
+	upstream = magenta bold
+[color "diff"]
+	meta = black bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	header = black bold
+	added = green bold
+	changed = blue bold
+	untracked = magenta bold
+	branch = green bold
+	nobranch = red bold
+	unmerged = red bold
+
+[alias]
+    b = branch
+    co = checkout
+    h = help
+    st = status
+    ss = status -sb #(short version)
+    d = diff
+
+    # Pretty git log
+    l = log --graph --pretty="tformat:%C(yellow)%h%Creset\\ %Cgreen(%ar)%Creset\\ %C(blue)<%an>%Creset\\ %C(red)%d%Creset\\ %s"
+
+    # Show plural verbose outpout about tags, branches or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
