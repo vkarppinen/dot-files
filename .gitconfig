@@ -1,6 +1,10 @@
 [user]
 	email = karppinenvaltteri@gmail.com
-	name = vkarppinen
+	name = Valtteri Karppinen
+        username = vkarppinen
+
+[github]
+	user = vkarppinen
 
 [color "branch"]
 	current = green bold
